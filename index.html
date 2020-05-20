@@ -5,15 +5,23 @@
       <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
       <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.10.0/dist/aframe-extras.min.js"></script>
       <script src="./js/aframe-shader-frog.js"></script>
-      <script src="shaderfrog-runtime.min.js"></script>
+      <script src="./js/shaderfrog-runtime.min.js"></script>
     </head>
 
     <body>
-      
+      <script src="./js/updateShaders"></script>
 
+      <a-scene antialias='true' update-shaders>
+        <a-box id="target" position='0 2 -2.5' scale="1.5 1.5 1.5">
+        <!-- Rotation for style -->
+        <a-animation attribute="rotation"
+                     dur="100000"
+                     fill="forwards"
+                     to="360 360 360"
+                     repeat="indefinite"
+                     easing="linear"></a-animation>
+      </a-box>
 
-
-      <a-scene>
         <a-assets>
           <a-asset-item id="sNC-obj" src="./assets/sNC.obj"></a-asset-item>
            <a-asset-item id="brain.asset" src="./assets/sistemaNerviosoCentral-001.glb"></a-asset-item>
@@ -112,5 +120,6 @@
           </a-entity>
 
       </a-scene>
+      <script src="./js/shaderFrogRuntime.js"></script>
     </body>
 </html>
