@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <script src="./server.js"></script>
+      <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+      <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.10.0/dist/aframe-extras.min.js"></script>
+      <script src="./js/aframe-shader-frog.js"></script>
+      <script src="./override-material.js"></script>
+    </head>
+
+    <body>
+      <a-scene>
+        <a-assets>
+           <a-asset-item id="brain.asset" src="./assets/sistemaNerviosoCentral-001.glb"></a-asset-item>
+        </a-assets>
+
+ 
+        <!-- MAIN CAMERA -->
+        <a-entity id="mainCam" camera reverse-look-controls wasd-controls></a-entity>
+
+        <a-box id="box" 
+          shader-frog="src:Psycho_Shader.json"
+          scale="1 1 1"
+          position="-2 0 -10">
+        </a-box>
+
+        <a-sphere id="esfera" 
+          shader-frog="src:Neurons.json"
+          radius="0.5"
+          position="2 0 -10">
+        </a-sphere>
+
+        <a-sphere 
+          shader-frog="src:Electric_Shader.json"
+          radius="0.5"
+          position="2 0 -10">
+        </a-sphere>
+        
+        <a-sphere 
+          shader-frog="src:New_Composed_Shader.json"
+          radius="0.5"
+          position="-0.75 0 -10">
+        </a-sphere>
+
+        <a-sphere 
+          shader-frog="src:Jellyfish_From_Space.json"
+          radius="0.5"
+          position="0.75 0 -10">
+        </a-sphere>
+
+        <a-sphere 
+          shader-frog="src:Flowing_Circles.json"
+          radius="0.5"
+          position="-3.5 0 -10">
+        </a-sphere>
+
+         <a-sphere 
+          shader-frog="src:Thruster_Shader.json"
+          radius="0.5"
+          position="3.5 0 -10">
+        </a-sphere>
+
+        <a-sphere 
+          shader-frog="src:Cosmic_Shader.json"
+          radius="0.5"
+          position="5 0 -10">
+        </a-sphere>
+
+        <a-sphere 
+          shader-frog="src:Green_Dance.json"
+          radius="0.5"
+          position="-5 0 -10">
+        </a-sphere>
+
+        <a-sphere 
+          shader-frog="src:Purple_Haze_Shader.json"
+          radius="0.5"
+          position="-6.75 0 -10">
+        </a-sphere>
+
+        <!--<a-entity id="cerebro"
+          obj-model="obj: #sNC-obj"  
+          shader-frog="src:Purple_Haze_Shader.json"
+          position="0, 0, -20" 
+          scale="1 1 1">
+        </a-entity> -->
+
+          <a-entity 
+          gltf-model="#brainl.asset" 
+          material="shader: flat; color: red"
+          shader-frog="src:Purple_Haze_Shader.json"
+          position="0, 0, -1" 
+          scale="3 3 3">
+          </a-entity>
+
+          <a-sphere material-displacement
+                scale="1 1 1"
+                radius="0.2"
+                position="0 1.5 -2"
+                segments-height="128"
+                segments-width="128">
+            <a-animation attribute="scale" direction="alternate-reverse" dur="5000" from="1 1 1" to="4 4 4" repeat="indefinite"></a-animation>
+          </a-sphere>
+
+          <a-entity id="brain" gltf-model-next="#brain.asset" position="0 0.1 -2" material-displacement>
+          <a-animation attribute="scale" direction="alternate-reverse" dur="5000" from="1 1 1" to="1.2 1.2 1.2" repeat="indefinite"></a-animation>
+          </a-entity>
+
+      </a-scene>
+    </body>
+</html>
